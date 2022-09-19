@@ -9,6 +9,7 @@ schemes:
 basePath: /IuserInfoService
 paths:
   /CreateFlashCardUserTest:
+    description: "Test"
     post:
       summary: CreateFlashCardUserTest
       consumes:
