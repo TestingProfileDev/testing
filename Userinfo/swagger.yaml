@@ -1,11 +1,5852 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
-  version: '1'
-  title: ''
-  description: ''
-paths: {}
-# Added by API Auto Mocking Plugin
-host: virtserver.swaggerhub.com
-basePath: /TESTINGPROFILEDEV_1/Userinfo-service/1
+  title: UserInfoService
+  version: 1.0.0
+host: localhost
 schemes:
- - https
+  - http
+  - https
+basePath: /IuserInfoService
+paths:
+  /CreateFlashCardUserTest:
+    post:
+      summary: CreateFlashCardUserTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: fcUserTest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/FlashCardUserTest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /UpdateFlashCardUserTest:
+    post:
+      summary: UpdateFlashCardUserTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: fcUserTest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/FlashCardUserTest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /ResumeUserTest:
+    get:
+      summary: ResumeUserTest
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: userTestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /ResumeFlashCardUserTest:
+    get:
+      summary: ResumeFlashCardUserTest
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: userTestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestDataJSON:
+    get:
+      summary: GetUserTestDataJSON
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: usertestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSectionQuestionMapping:
+    get:
+      summary: GetSectionQuestionMapping
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: usertestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveUserTestItems:
+    post:
+      summary: SaveUserTestItems
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserTest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetEvaluatedPollDetails:
+    get:
+      summary: GetEvaluatedPollDetails
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: usertestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveEvaluatedPollDetails:
+    post:
+      summary: SaveEvaluatedPollDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: SaveEvaluatedPollRequestObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SaveEvaluatedPollRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteUserTest:
+    get:
+      summary: DeleteUserTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteFlashCardUserTest:
+    get:
+      summary: DeleteFlashCardUserTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: flashCardUserTestIDs
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteUserTestProduct:
+    get:
+      summary: DeleteUserTestProduct
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /UpdateUserTestProductStatus:
+    get:
+      summary: UpdateUserTestProductStatus
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestProductID
+          in: query
+          required: false
+          type: "string"
+        - name: status
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestItemDetails:
+    post:
+      summary: GetUserTestItemDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: QuestionRequestData
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /ScoreUserTest:
+    post:
+      summary: ScoreUserTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserTest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetScoreReportData:
+    get:
+      summary: GetScoreReportData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestRecommendations:
+    get:
+      summary: GetUserTestRecommendations
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestId
+          in: query
+          required: false
+          type: "string"
+        - name: CurrentHubName
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetMyEssayAndSamples:
+    get:
+      summary: GetMyEssayAndSamples
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserTestId
+          in: query
+          required: false
+          type: "string"
+        - name: itemId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /ViewScoringGuide:
+    get:
+      summary: ViewScoringGuide
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserTestId
+          in: query
+          required: false
+          type: "string"
+        - name: itemId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveUserCourseItems:
+    post:
+      summary: SaveUserCourseItems
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userCourse
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserCourse"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetMyReviewAnswers:
+    get:
+      summary: GetMyReviewAnswers
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SubmitProductScoreDataToMonster:
+    post:
+      summary: SubmitProductScoreDataToMonster
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: requestObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/MonsterSubmitProductRequestData"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetQuestionResponse:
+    post:
+      summary: GetQuestionResponse
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestQuestion
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserTestQuestion"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteUserCourseProduct:
+    get:
+      summary: DeleteUserCourseProduct
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userCourseID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /IsUserCredentialsValid:
+    post:
+      summary: IsUserCredentialsValid
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objUserInfo
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/userInfo"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/User"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /Logout:
+    post:
+      summary: Logout
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objUserInfo
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/userInfo"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestProducts:
+    get:
+      summary: GetUserTestProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+        - name: CurrentHubName
+          in: query
+          required: false
+          type: "string"
+        - name: PageNumber
+          in: query
+          required: false
+          type: "string"
+        - name: PageSize
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserFlashCardTestProducts:
+    get:
+      summary: GetUserFlashCardTestProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+        - name: CurrentHubName
+          in: query
+          required: false
+          type: "string"
+        - name: PageNumber
+          in: query
+          required: false
+          type: "string"
+        - name: PageSize
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserCourseProductsPortals:
+    get:
+      summary: GetUserCourseProductsPortals
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+        - name: CurrentHubName
+          in: query
+          required: false
+          type: "string"
+        - name: PageNumber
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserCourseProducts:
+    post:
+      summary: GetUserCourseProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserEResourceRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserEResourceProducts:
+    post:
+      summary: GetUserEResourceProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserEResourceRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /getUserFlashCardProductsXML:
+    get:
+      summary: getUserFlashCardProductsXML
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: iClientID
+          in: query
+          required: false
+          type: "string"
+        - name: nvcClientUserID
+          in: query
+          required: false
+          type: "string"
+        - name: ProductTypeID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteUserEResource:
+    get:
+      summary: DeleteUserEResource
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserEResourceId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /ResetUserTest:
+    get:
+      summary: ResetUserTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestId
+          in: query
+          required: false
+          type: "string"
+        - name: currentPageNumber
+          in: query
+          required: false
+          type: "string"
+        - name: currentSectionId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetAllUserCourseStatus:
+    get:
+      summary: GetAllUserCourseStatus
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveUserPageHit:
+    post:
+      summary: SaveUserPageHit
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userPageHit
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserPageHit"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CheckAndUpdatePreparationLevelOfUser:
+    get:
+      summary: CheckAndUpdatePreparationLevelOfUser
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: iAppsUserId
+          in: query
+          required: false
+          type: "string"
+        - name: PreparationLevelId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetPreparationLevelOfUser:
+    get:
+      summary: GetPreparationLevelOfUser
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: iAppsUserId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SearchSimplyHiredJobs:
+    post:
+      summary: SearchSimplyHiredJobs
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: queryString
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SimplyHiredRequestQueryString"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /saveUserSearchHistoryData:
+    post:
+      summary: saveUserSearchHistoryData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: SimplyHiredRequestQueryStringObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SimplyHiredRequestQueryString"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "string"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /saveAdvancedUserSearchHistoryData:
+    post:
+      summary: saveAdvancedUserSearchHistoryData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: advancedSearchObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/AdvancedSearch"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "string"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /AdvancedJobSearch:
+    post:
+      summary: AdvancedJobSearch
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: advancedSearchObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/AdvancedSearch"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetRecommendedTests:
+    post:
+      summary: GetRecommendedTests
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objRecommendedTestsRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/RecommendedTestsRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestTutorialFlashCardProducts:
+    post:
+      summary: GetUserTestTutorialFlashCardProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserTestTutorialFlashCardProductsRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSchoolScholarshipSavedCount:
+    get:
+      summary: GetUserSchoolScholarshipSavedCount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSkillsImprovement:
+    get:
+      summary: GetSkillsImprovement
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: institutionID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveOccupationCard:
+    post:
+      summary: SaveOccupationCard
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: occCard
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/OccupationCard"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetOccupationCard:
+    post:
+      summary: GetOccupationCard
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: occCard
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/OccupationCard"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedJobsToOccuptionCard:
+    get:
+      summary: GetSavedJobsToOccuptionCard
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteOccupationCard:
+    post:
+      summary: DeleteOccupationCard
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: occCard
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/OccupationCard"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveJobDetails:
+    post:
+      summary: SaveJobDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objSavedJob
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SavedJob"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveJobsContactDetails:
+    post:
+      summary: SaveJobsContactDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objSavedJob
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SavedJob"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveJob:
+    post:
+      summary: SaveJob
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: saveJobObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SavedJob"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedOccupationCards:
+    get:
+      summary: GetSavedOccupationCards
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /StartOverSurveyTest:
+    get:
+      summary: StartOverSurveyTest
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: oldUserTestId
+          in: query
+          required: false
+          type: "string"
+        - name: userTestproductID
+          in: query
+          required: false
+          type: "string"
+        - name: testId
+          in: query
+          required: false
+          type: "string"
+        - name: userTestMode
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: CurrentHubName
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetAllSavedJobsData:
+    get:
+      summary: GetAllSavedJobsData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetOnlySavedJobsByUserid:
+    get:
+      summary: GetOnlySavedJobsByUserid
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /LinkUnlinkOccupationToSavedJobs:
+    post:
+      summary: LinkUnlinkOccupationToSavedJobs
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: saveJobObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SavedJob"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSavedJob:
+    post:
+      summary: DeleteSavedJob
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: saveJobObj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SavedJob"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetOccupationCardNameByOccCardID:
+    get:
+      summary: GetOccupationCardNameByOccCardID
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: occCardId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveJobSearch:
+    post:
+      summary: SaveJobSearch
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: jobSearch
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SavedJobSearch"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetJobSearchList:
+    get:
+      summary: GetJobSearchList
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: pageIndex
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSavedJobSearch:
+    get:
+      summary: DeleteSavedJobSearch
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: savedJobSearchId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedJobSearchObject:
+    get:
+      summary: GetSavedJobSearchObject
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: savedJobSearchId
+          in: query
+          required: false
+          type: "string"
+        - name: jobApiId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetOccupationMatches:
+    get:
+      summary: GetOccupationMatches
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestId
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: prepLevelId
+          in: query
+          required: false
+          type: "string"
+        - name: listTypeId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetViewMatchesData:
+    get:
+      summary: GetViewMatchesData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /AddUpdateJCAFiveUser:
+    post:
+      summary: AddUpdateJCAFiveUser
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: JSONData
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/JCAUserOperations"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetAllSavedResume:
+    get:
+      summary: GetAllSavedResume
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetResumeData:
+    get:
+      summary: GetResumeData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: resumeGUID
+          in: query
+          required: false
+          type: "string"
+        - name: isModelResume
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetJobCategoriesForResume:
+    get:
+      summary: GetJobCategoriesForResume
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderStepData:
+    post:
+      summary: SaveResumeBuilderStepData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeStyle:
+    get:
+      summary: SaveResumeStyle
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: resumeGUID
+          in: query
+          required: false
+          type: "string"
+        - name: resumeStyleId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderHeaderStepData:
+    post:
+      summary: SaveResumeBuilderHeaderStepData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderExperienceStepData:
+    post:
+      summary: SaveResumeBuilderExperienceStepData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderEducationalStepData:
+    post:
+      summary: SaveResumeBuilderEducationalStepData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderAddNewSectionStepData:
+    post:
+      summary: SaveResumeBuilderAddNewSectionStepData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSavedExperience:
+    post:
+      summary: DeleteSavedExperience
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSavedJobGroup:
+    post:
+      summary: DeleteSavedJobGroup
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /RenameJobGroupName:
+    post:
+      summary: RenameJobGroupName
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /deleteSchoolInEducationSection:
+    get:
+      summary: deleteSchoolInEducationSection
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: strResumeGUID
+          in: query
+          required: false
+          type: "string"
+        - name: educationId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /deleteSectionInOtherSection:
+    get:
+      summary: deleteSectionInOtherSection
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: strResumeGUID
+          in: query
+          required: false
+          type: "string"
+        - name: sectionId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CreateUserTestFromSubTestProduct:
+    get:
+      summary: CreateUserTestFromSubTestProduct
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: SKUID
+          in: query
+          required: false
+          type: "string"
+        - name: UserID
+          in: query
+          required: false
+          type: "string"
+        - name: UserGroupTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserGroupTestItems:
+    get:
+      summary: GetUserGroupTestItems
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserGroupTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /ScoreUserGroupTest:
+    post:
+      summary: ScoreUserGroupTest
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: groupScoreObjectRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/GroupScoreObjectRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserGroupTestScoreReportData:
+    get:
+      summary: GetUserGroupTestScoreReportData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserGroupTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetMyGroupTestQuestionsStatus:
+    get:
+      summary: GetMyGroupTestQuestionsStatus
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserGroupTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserProgressOnDashboard:
+    get:
+      summary: GetUserProgressOnDashboard
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: jcaTypeId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetAllSampleLetters:
+    get:
+      summary: GetAllSampleLetters
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUsedSampleResumesData:
+    get:
+      summary: GetUsedSampleResumesData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: resumeGUID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CreateUpdateLetter:
+    post:
+      summary: CreateUpdateLetter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objLetterRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/LetterRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetLetterData:
+    get:
+      summary: GetLetterData
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: intLetterID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetComputerSkillCourses:
+    get:
+      summary: GetComputerSkillCourses
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteResume:
+    post:
+      summary: DeleteResume
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CloneResume:
+    post:
+      summary: CloneResume
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /LinkUnlinkSavedJobToLetter:
+    get:
+      summary: LinkUnlinkSavedJobToLetter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: letterId
+          in: query
+          required: false
+          type: "string"
+        - name: jobIds
+          in: query
+          required: false
+          type: "string"
+        - name: isAdd
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderSectionOrderStyle:
+    post:
+      summary: SaveResumeBuilderSectionOrderStyle
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteLetter:
+    post:
+      summary: DeleteLetter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objLetterRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/LetterRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DownloadRtf:
+    post:
+      summary: DownloadRtf
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/Stream"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DownloadDocxFile:
+    post:
+      summary: DownloadDocxFile
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/Stream"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DownloadPDFLetter:
+    post:
+      summary: DownloadPDFLetter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/Stream"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DownloadRTFLetter:
+    post:
+      summary: DownloadRTFLetter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/Stream"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DownloadDocxLetter:
+    post:
+      summary: DownloadDocxLetter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/Stream"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /AttachDocxFile:
+    post:
+      summary: AttachDocxFile
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objEmailResumeAttach
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/EmailResumeAttach"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /AttachRtfFile:
+    post:
+      summary: AttachRtfFile
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objEmailResumeAttach
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/EmailResumeAttach"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserPersonalInfo:
+    get:
+      summary: GetUserPersonalInfo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSampleResumePageJson:
+    get:
+      summary: GetSampleResumePageJson
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: resumeGUID
+          in: query
+          required: false
+          type: "string"
+        - name: jobFamilyID
+          in: query
+          required: false
+          type: "string"
+        - name: experienceLevelID
+          in: query
+          required: false
+          type: "string"
+        - name: jobRoleID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /findSampleResumeMatched:
+    get:
+      summary: findSampleResumeMatched
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: jobFamilyID
+          in: query
+          required: false
+          type: "string"
+        - name: experienceLevelID
+          in: query
+          required: false
+          type: "string"
+        - name: jobRoleID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /saveUsedSampleResumes:
+    post:
+      summary: saveUsedSampleResumes
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetOccMatchersOnDashboard:
+    get:
+      summary: GetOccMatchersOnDashboard
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: pageMapNodeId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetAllSavedLetters:
+    get:
+      summary: GetAllSavedLetters
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /setEmailSent:
+    get:
+      summary: setEmailSent
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: resumeGUID
+          in: query
+          required: false
+          type: "string"
+        - name: intLetterId
+          in: query
+          required: false
+          type: "string"
+        - name: selectedJobID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /isJCAFiveUserRegistered:
+    get:
+      summary: isJCAFiveUserRegistered
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveResumeBuilderFileContent:
+    post:
+      summary: SaveResumeBuilderFileContent
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetRecResrcsSkillsAndSavedJobs:
+    get:
+      summary: GetRecResrcsSkillsAndSavedJobs
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: occCode
+          in: query
+          required: false
+          type: "string"
+        - name: institutionID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /AddUserCompCourse:
+    post:
+      summary: AddUserCompCourse
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: JSONData
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserCompCourse"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /MarkCompCoursePageVisited:
+    get:
+      summary: MarkCompCoursePageVisited
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userCompCourseId
+          in: query
+          required: false
+          type: "string"
+        - name: pageId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserCompCourseId:
+    get:
+      summary: GetUserCompCourseId
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userProductId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetCompCoursePageVisited:
+    get:
+      summary: GetCompCoursePageVisited
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserCompCourseId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /MarkCompCoursePageCompleted:
+    get:
+      summary: MarkCompCoursePageCompleted
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userCompCourseId
+          in: query
+          required: false
+          type: "string"
+        - name: pageId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SendResumeToUtah:
+    post:
+      summary: SendResumeToUtah
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objResumeRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ResumeRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SendLetterToUtah:
+    post:
+      summary: SendLetterToUtah
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: objLetterRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/LetterRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /InsertMobileResourceDownload:
+    post:
+      summary: InsertMobileResourceDownload
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: JSONData
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/MobileApplication"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /getInstitutionLogo:
+    post:
+      summary: getInstitutionLogo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: req
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/InstitutionLogoRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetMarcProductDetails:
+    get:
+      summary: GetMarcProductDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: sku
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveSchoolDetails:
+    post:
+      summary: SaveSchoolDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objSchool
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserSchool"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveScholarshipFilter:
+    post:
+      summary: SaveScholarshipFilter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objScholarshipFilter
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/ScholarshipFilter"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveScholarship:
+    post:
+      summary: SaveScholarship
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objScholarship
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/Scholarship"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedscholarshipIds:
+    get:
+      summary: GetSavedscholarshipIds
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteScholarshipFilter:
+    get:
+      summary: DeleteScholarshipFilter
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: scholarshipFilterId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteScholarship:
+    get:
+      summary: DeleteScholarship
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: savedScholarshipId
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSavedSchool:
+    get:
+      summary: DeleteSavedSchool
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: savedSchoolId
+          in: query
+          required: false
+          type: "string"
+        - name: savedSchoolGuid
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedSchoolIds:
+    get:
+      summary: GetSavedSchoolIds
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CreateJCAFiveUser:
+    get:
+      summary: CreateJCAFiveUser
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveSchoolComparison:
+    post:
+      summary: SaveSchoolComparison
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: schoolComparison
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserSchoolComparison"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSchoolComparisonList:
+    get:
+      summary: GetUserSchoolComparisonList
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserId
+          in: query
+          required: false
+          type: "string"
+        - name: FinderToolType
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedSchoolDetails:
+    get:
+      summary: GetSavedSchoolDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSchoolSavedCount:
+    get:
+      summary: GetUserSchoolSavedCount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSchoolSearchList:
+    get:
+      summary: GetUserSchoolSearchList
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveCollegeSearch:
+    post:
+      summary: SaveCollegeSearch
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objCollege
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/CollegeFilter"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSchoolsComparison:
+    get:
+      summary: DeleteSchoolsComparison
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: savedSchoolComparisonID
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveGraduateSearch:
+    post:
+      summary: SaveGraduateSearch
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objGraduate
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/GraduateFilter"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSchoolComparison:
+    get:
+      summary: GetUserSchoolComparison
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: schoolComparisonId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteSchoolSearches:
+    get:
+      summary: DeleteSchoolSearches
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: schoolSearchId
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: submitToMonster
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSchoolSearchFilters:
+    get:
+      summary: GetSchoolSearchFilters
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: searchId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSchoolDetails:
+    get:
+      summary: GetUserSchoolDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: schoolGuid
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestCenterProducts:
+    get:
+      summary: GetUserTestCenterProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+        - name: pageSize
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTutorialCenterProducts:
+    get:
+      summary: GetUserTutorialCenterProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+        - name: pageSize
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserCenterEResourceProducts:
+    post:
+      summary: GetUserCenterEResourceProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserEResourceRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserDashboardDetails:
+    get:
+      summary: GetUserDashboardDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedScholarshipSearchList:
+    get:
+      summary: GetSavedScholarshipSearchList
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetSavedScholarshipDetails:
+    get:
+      summary: GetSavedScholarshipDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserScholarshipSavedCount:
+    get:
+      summary: GetUserScholarshipSavedCount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserScholarshipNumById:
+    get:
+      summary: GetUserScholarshipNumById
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: scholarshipGuid
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetScholarshipSearchFilters:
+    get:
+      summary: GetScholarshipSearchFilters
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: searchId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetCareerDashboardDetails:
+    post:
+      summary: GetCareerDashboardDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objCareerDashboardDetailsRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/CareerDashboardDetailsRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserTestProductData:
+    get:
+      summary: GetUserTestProductData
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: UserTestProductID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserLearnProductData:
+    get:
+      summary: GetUserLearnProductData
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: UserLearnProductID
+          in: query
+          required: false
+          type: "string"
+        - name: UserID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveUserLearnData:
+    post:
+      summary: SaveUserLearnData
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: objUserLearnDataSaveRequestt
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserLearnDataSaveRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CreateUserProductDetails:
+    post:
+      summary: CreateUserProductDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserProductDetails
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserProduct"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /CreateUserTestDetails:
+    post:
+      summary: CreateUserTestDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: UserTestProductDetails
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserTestProduct"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetLatestVersion:
+    post:
+      summary: GetLatestVersion
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: obj
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/GetVersionData"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetMobileMyCenterProducts:
+    post:
+      summary: GetMobileMyCenterProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: mobileProductsRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/MobileResourceRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetDiagnosticResourceData:
+    get:
+      summary: GetDiagnosticResourceData
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: userPermissions
+          in: query
+          required: false
+          type: "string"
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GeneratePersonalizedStudyPlan:
+    post:
+      summary: GeneratePersonalizedStudyPlan
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: StudyPlanRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/StudyPlanRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetPersonalisedStudyPlan:
+    get:
+      summary: GetPersonalisedStudyPlan
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: UserId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /UpdateResourceStatusInPSP:
+    post:
+      summary: UpdateResourceStatusInPSP
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objUpdateResourceStatusInPSPRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UpdateResourceStatusInPSPRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetAssesmentTestSectionResults:
+    get:
+      summary: GetAssesmentTestSectionResults
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: UserTestId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetPracticeTestResult:
+    post:
+      summary: GetPracticeTestResult
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: practiceTestDetails
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/List1"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserPlaylistProducts:
+    post:
+      summary: GetUserPlaylistProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: objRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserPlaylistProductsRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetGlossaryIdByFriendlyUrl:
+    post:
+      summary: GetGlossaryIdByFriendlyUrl
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: friendlyUrlsRequest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/GlossaryFriendlyUrlsRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserLearnCenterProducts:
+    get:
+      summary: GetUserLearnCenterProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userID
+          in: query
+          required: false
+          type: "string"
+        - name: pageSize
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserLearnProducts:
+    post:
+      summary: GetUserLearnProducts
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserEResourceRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /DeleteUserLearnProduct:
+    get:
+      summary: DeleteUserLearnProduct
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userLearnID
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveUserNotes:
+    post:
+      summary: SaveUserNotes
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userTest
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/UserNoteSaveRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetTrayDataFromOnboardingResponse:
+    post:
+      summary: GetTrayDataFromOnboardingResponse
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/AnswerProductRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserNotes:
+    post:
+      summary: GetUserNotes
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/GetUserNoteRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /getDomainDetails:
+    get:
+      summary: getDomainDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserSurveyPermissionDetails:
+    get:
+      summary: GetUserSurveyPermissionDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: userId
+          in: query
+          required: false
+          type: "string"
+        - name: institutionId
+          in: query
+          required: false
+          type: "string"
+        - name: eventid
+          in: query
+          required: false
+          type: "string"
+        - name: permissionName
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /SaveUserSurveyStatusDetails:
+    post:
+      summary: SaveUserSurveyStatusDetails
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: false
+          schema:
+            $ref: "#/definitions/SaveSurveyStatusRequest"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /GetUserGameData:
+    get:
+      summary: GetUserGameData
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: UserGameId
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IuserInfoService
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Stream"
+        default:
+          description: failed
+          schema:
+            type: "string"
+definitions:
+  Stream:
+    type: object
+    properties:
+      CanRead:
+        type: boolean
+      CanSeek:
+        type: boolean
+      CanTimeout:
+        type: boolean
+      CanWrite:
+        type: boolean
+      Length:
+        type: "number"
+        format: int32
+      Position:
+        type: "number"
+        format: int32
+      ReadTimeout:
+        type: "number"
+        format: int32
+      WriteTimeout:
+        type: "number"
+        format: int32
+  SaveEvaluatedPollRequest:
+    type: object
+    properties:
+      TestId:
+        $ref: "#/definitions/Guid"
+      ProductId:
+        $ref: "#/definitions/Guid"
+      CreatedDate:
+        type: "string"
+      ModifiedDate:
+        type: "string"
+      UserTestID:
+        $ref: "#/definitions/Guid"
+      TestDetail:
+        $ref: "#/definitions/TestDetail"
+  Error:
+    type: object
+    properties:
+      ErrorCodeType:
+        $ref: "#/definitions/ErrorCode"
+      StatusCode:
+        $ref: "#/definitions/StatusCode"
+      ExceptionDetails:
+        $ref: "#/definitions/Exception"
+      CustomErrorDescription:
+        type: "string"
+
+  UserEResourceRequest:
+    type: object
+    properties:
+      userID:
+        $ref: "#/definitions/Guid"
+      resourceType:
+        type: "number"
+        format: int32
+      pageNumber:
+        type: "number"
+        format: int32
+      pageSize:
+        type: "number"
+        format: int32
+      showCompleted:
+        type: boolean
+      showInProgress:
+        type: boolean
+      currentHubName:
+        type: "string"
+      isEbook:
+        type: boolean
+      isCompCourse:
+        type: boolean
+      isArticle:
+        type: boolean
+  UserTestTutorialFlashCardProductsRequest:
+    type: object
+    properties:
+      userID:
+        type: "string"
+      testPageSize:
+        type: "string"
+      tutorialPageSize:
+        type: "string"
+      flashCardPageSize:
+        type: "string"
+      flashCardPageNumber:
+        type: "string"
+      learnPageSize:
+        type: "string"
+      currentHubName:
+        type: "string"
+
+  OccupationCard:
+    type: object
+    properties:
+      userId:
+        type: "string"
+      strOCCode:
+        type: "string"
+      strOCTitle:
+        type: "string"
+      jobSearchQueryString:
+        type: "string"
+      isDeleted:
+        type: "string"
+      occCardId:
+        type: "number"
+        format: int32
+      skillsImprovementData:
+        type: "string"
+      recommendedTestsData:
+        type: "string"
+      savedJobsData:
+        type: "string"
+
+  SavedJob:
+    type: object
+    properties:
+      jobID:
+        type: "number"
+        format: decimal(9,2)
+      userID:
+        type: "string"
+      intOccCardId:
+        type: "number"
+        format: decimal(9,2)
+      strOccCardName:
+        type: "string"
+      jobStatusID:
+        type: "number"
+        format: decimal(9,2)
+      notes:
+        type: "string"
+      contactPersonName:
+        type: "string"
+      contactPersonDesignation:
+        type: "string"
+      contactEmailID:
+        type: "string"
+      contactPhone:
+        type: "string"
+      contactAddress:
+        type: "string"
+      resumeID:
+        type: "number"
+        format: decimal(9,2)
+      letterID:
+        type: "number"
+        format: decimal(9,2)
+      jobName:
+        type: "string"
+      companyName:
+        type: "string"
+      companyAddress:
+        type: "string"
+      jobDescription:
+        type: "string"
+      savedDate:
+        type: "string"
+      modifiedDate:
+        type: "string"
+      jobSourceURL:
+        type: "string"
+      jobKey:
+        type: "string"
+      resumeSentDate:
+        type: "string"
+      cityName:
+        type: "string"
+      stateID:
+        type: "number"
+        format: decimal(9,2)
+      ONETSOCCode:
+        type: "string"
+      stateCode:
+        type: "string"
+      isLink:
+        type: "number"
+        format: decimal(9,2)
+      jobApiId:
+        type: "number"
+        format: decimal(9,2)
+
+  SavedJobSearch:
+    type: object
+    properties:
+      userID:
+        type: "string"
+      searchQueryTitle:
+        type: "string"
+      searchQueryType:
+        type: "string"
+      strEssential:
+        type: "string"
+      strExactPhrase:
+        type: "string"
+      strAtleastOneWord:
+        type: "string"
+      strIgnoreWords:
+        type: "string"
+      strJobTitle:
+        type: "string"
+      strCompany:
+        type: "string"
+      strCity:
+        type: "string"
+      intStateID:
+        type: "number"
+        format: decimal(9,2)
+      strZipCode:
+        type: "string"
+      intDistance:
+        type: "number"
+        format: decimal(9,2)
+      intResultsPerPage:
+        type: "number"
+        format: decimal(9,2)
+      intSortJobsBy:
+        type: "number"
+        format: decimal(9,2)
+      intJobType:
+        type: "number"
+        format: decimal(9,2)
+      intPostedWithin:
+        type: "number"
+        format: decimal(9,2)
+      intSource:
+        type: "number"
+        format: decimal(9,2)
+      strKeywords:
+        type: "string"
+      strLocation:
+        type: "string"
+      SalaryInfo:
+        type: "string"
+      isFederalSearch:
+        type: boolean
+      usajobsfilters:
+        $ref: "#/definitions/usajobsFilters"
+      country:
+        type: "string"
+
+  InstitutionLogoRequest:
+    type: object
+    properties:
+      isLibraryPortal:
+        type: "string"
+      institutionID:
+        type: "string"
+      environment:
+        $ref: "#/definitions/Uri"
+
+  CollegeFilter:
+    type: object
+    properties:
+      SavedSchoolFilterID:
+        $ref: "#/definitions/Guid"
+      SavedSearchDate:
+        type: "string"
+        format: date-time
+      SearchTitle:
+        type: "string"
+      UserId:
+        type: "string"
+      FinderToolType:
+        type: "number"
+        format: int32
+      SearchType:
+        type: "number"
+        format: int32
+      Keyword:
+        type: "string"
+      Regions:
+        type: "string"
+      States:
+        type: "string"
+      TypeOfSchool:
+        type: "string"
+      Selectivity:
+        type: "string"
+      Majors:
+        type: "string"
+      Cost:
+        type: "string"
+      Enrollment:
+        type: "string"
+      Community:
+        type: "string"
+      Affiliation:
+        type: "string"
+      AthleticsMen:
+        type: "string"
+      AthleticsWomen:
+        type: "string"
+      LearningDisabled:
+        type: "string"
+      City:
+        type: "string"
+      ZipCode:
+        type: "string"
+
+  CareerDashboardDetailsRequest:
+    type: object
+    properties:
+      userId:
+        type: "string"
+      institutionID:
+        type: "string"
+      pageMapNodeId:
+        type: "string"
+
+  GetVersionData:
+    type: object
+  List1:
+    type: object
+    properties:
+      Capacity:
+        type: "number"
+        format: int32
+      Count:
+        type: "number"
+        format: int32
+      System.Collections.IList.IsFixedSize:
+        type: boolean
+      System.Collections.Generic.ICollection<T>.IsReadOnly:
+        type: boolean
+      System.Collections.IList.IsReadOnly:
+        type: boolean
+      System.Collections.ICollection.IsSynchronized:
+        type: boolean
+      System.Collections.ICollection.SyncRoot:
+        $ref: "#/definitions/Object"
+      Item:
+        $ref: "#/definitions/T"
+      System.Collections.IList.Item:
+        $ref: "#/definitions/Object"
+
+  AnswerProductRequest:
+    type: object
+    properties:
+      Sections:
+        $ref: "#/definitions/List1"
+
+  User:
+    type: object
+    properties:
+      IsAuthenticated:
+        type: boolean
+      Username:
+        type: "string"
+      error:
+        $ref: "#/definitions/Error"
+  AdvancedSearch:
+    type: object
+    properties:
+      keyword:
+        $ref: "#/definitions/Keywords"
+      location:
+        $ref: "#/definitions/Location"
+      IndeedQueryString:
+        $ref: "#/definitions/SimplyHiredRequestQueryString"
+  EmailResumeAttach:
+    type: object
+    properties:
+      userId:
+        $ref: "#/definitions/Guid"
+      resumeGUID:
+        $ref: "#/definitions/Guid"
+      isBlnMac:
+        type: boolean
+      fileName:
+        type: "string"
+      isDownload:
+        type: boolean
+      letterId:
+        type: "string"
+  FlashCardUserTest:
+    type: object
+    properties:
+      Id:
+        $ref: "#/definitions/Guid"
+      UserTestProductId:
+        $ref: "#/definitions/Guid"
+      CurrentHub:
+        type: "string"
+      FCDifficultyId:
+        $ref: "#/definitions/Guid"
+      FCOrderTypeId:
+        type: "number"
+        format: int32
+      FCViewModeId:
+        $ref: "#/definitions/Guid"
+      LastAttemptedQuestionId:
+        $ref: "#/definitions/Guid"
+      StatusId:
+        type: "number"
+        format: int32
+      Sections:
+        $ref: "#/definitions/List1"
+      UserTestItems:
+        $ref: "#/definitions/List1"
+  GetUserNoteRequest:
+    type: object
+    properties:
+      getall:
+        type: boolean
+      prproducttypeid:
+        $ref: "#/definitions/Guid"
+      userproductid:
+        $ref: "#/definitions/List1"
+      userid:
+        $ref: "#/definitions/Guid"
+      sortby:
+        type: "string"
+      pagenumber:
+        type: "number"
+        format: int32
+      pagesize:
+        type: "number"
+        format: int32
+      showcompleted:
+        type: boolean
+      showinprogress:
+        type: boolean
+      producttype:
+        type: "string"
+      pageid:
+        $ref: "#/definitions/List1"
+      includepage:
+        type: boolean
+      noteid:
+        $ref: "#/definitions/Guid"
+      filterProduct:
+        type: boolean
+      contentid:
+        $ref: "#/definitions/Guid"
+  GlossaryFriendlyUrlsRequest:
+    type: object
+    properties:
+      friendlyUrls:
+        type: "string"
+  GraduateFilter:
+    type: object
+    properties:
+      SavedSchoolSearchID:
+        $ref: "#/definitions/Guid"
+      SavedSearchDate:
+        type: "string"
+        format: date-time
+      SearchTitle:
+        type: "string"
+      UserId:
+        type: "string"
+      FinderToolType:
+        type: "number"
+        format: int32
+      SearchType:
+        type: "number"
+        format: int32
+      Keyword:
+        type: "string"
+      DistanceLearning:
+        type: "string"
+      States:
+        type: "string"
+      TypeOfDegree:
+        type: "string"
+      Program:
+        type: "string"
+      Cost:
+        type: "string"
+      Enrollment:
+        type: "string"
+      Community:
+        type: "string"
+      Affiliation:
+        type: "string"
+      City:
+        type: "string"
+      ZipCode:
+        type: "string"
+  GroupScoreObjectRequest:
+    type: object
+    properties:
+      LTIData:
+        type: "string"
+      IsLtiMode:
+        type: boolean
+      UserGroupTestId:
+        $ref: "#/definitions/Guid"
+  JCAUserOperations:
+    type: object
+    properties:
+      operationType:
+        type: "number"
+        format: int32
+      xmlUserInfo:
+        type: "string"
+  LetterRequest:
+    type: object
+    properties:
+      userId:
+        $ref: "#/definitions/Guid"
+      objLetter:
+        $ref: "#/definitions/Letter"
+      letterId:
+        type: "number"
+        format: int32
+      username:
+        type: "string"
+      institutionId:
+        type: "number"
+        format: int32
+      isUtahUser:
+        type: boolean
+      isModelResume:
+        type: boolean
+
+  MobileApplication:
+    type: object
+    properties:
+      UserId:
+        type: "string"
+      ProductId:
+        type: "string"
+      ProductType:
+        type: "string"
+      DownloadDateTime:
+        type: "string"
+      CurrentHub:
+        type: "string"
+      OS:
+        type: "string"
+  MobileResourceRequest:
+    type: object
+    properties:
+      userId:
+        type: "string"
+      pageNumber:
+        type: "number"
+        format: int32
+      pageSize:
+        type: "number"
+        format: int32
+      resourceType:
+        type: array
+        items:
+          $ref: "#/definitions/Guid"
+  MonsterSubmitProductRequestData:
+    type: object
+    properties:
+      UserTestId:
+        type: "string"
+      UserCourseId:
+        type: "string"
+      UserEResourceId:
+        type: "string"
+      InstitutionId:
+        type: "string"
+  RecommendedTestsRequest:
+    type: object
+    properties:
+      occCodes:
+        type: "string"
+      institutionID:
+        type: "string"
+  ResumeRequest:
+    type: object
+    properties:
+      userId:
+        $ref: "#/definitions/Guid"
+      resumeBuilderStepId:
+        type: "number"
+        format: int32
+      objResume:
+        $ref: "#/definitions/Resume"
+      strResumeGUID:
+        type: "string"
+      objPersonalProfile:
+        $ref: "#/definitions/PersonalProfile"
+      strWebUrl:
+        type: "string"
+      objExperience:
+        $ref: "#/definitions/Experience"
+      strJobGroupTitle:
+        type: "string"
+      intJobGroupID:
+        type: "number"
+        format: int32
+      objEducation:
+        $ref: "#/definitions/Education"
+      objNewSection:
+        $ref: "#/definitions/NewSection"
+      endDate:
+        type: "string"
+      startDate:
+        type: "string"
+      modelResumeGUIDs:
+        type: "string"
+      resumePdfHtml:
+        type: "string"
+      username:
+        type: "string"
+      institutionId:
+        type: "number"
+        format: int32
+      isUtahUser:
+        type: boolean
+      isModelResume:
+        type: boolean
+  SaveSurveyStatusRequest:
+    type: object
+    properties:
+      PIMId:
+        $ref: "#/definitions/Guid"
+      UserId:
+        $ref: "#/definitions/Guid"
+      HidePopup:
+        type: boolean
+      IsTestAttempted:
+        type: boolean
+  Scholarship:
+    type: object
+    properties:
+      Id:
+        $ref: "#/definitions/Guid"
+      Title:
+        type: "string"
+      ScholarshipNum:
+        type: "string"
+      FilterData:
+        type: "string"
+      Name:
+        type: "string"
+      UserId:
+        type: "string"
+      CreatedDate:
+        type: "string"
+      IsDeleted:
+        type: "string"
+  ScholarshipFilter:
+    type: object
+    properties:
+      Id:
+        $ref: "#/definitions/Guid"
+      Title:
+        type: "string"
+      UserId:
+        type: "string"
+      FilterData:
+        type: "string"
+      Keyword:
+        type: "string"
+      IsDeleted:
+        type: "string"
+  SimplyHiredRequestQueryString:
+    type: object
+
+  StudyPlanRequest:
+    type: object
+    properties:
+      AssessmentUserTestId:
+        type: "number"
+        format: decimal(9,2)
+      OnboardingUserTestId:
+        type: "number"
+        format: decimal(9,2)
+      UserId:
+        $ref: "#/definitions/Guid"
+      AssessmentResourceId:
+        type: "number"
+        format: decimal(9,2)
+      CenterFriendlyUrl:
+        type: "string"
+      Permissions:
+        type: "string"
+  UpdateResourceStatusInPSPRequest:
+    type: object
+    properties:
+      UserId:
+        $ref: "#/definitions/Guid"
+      UserResourceId:
+        $ref: "#/definitions/Guid"
+      ResourceType:
+        type: "string"
+      ResourceStatus:
+        type: "number"
+        format: int32
+  UserCompCourse:
+    type: object
+    properties:
+      UserProductId:
+        type: "string"
+      UserCompCourseId:
+        type: "string"
+      CompCourseId:
+        type: "string"
+  UserCourse:
+    type: object
+    properties:
+      userCourseID:
+        type: "string"
+      visitedPageArray:
+        type: "string"
+      bookMarkPageID:
+        type: "string"
+      bookmarkPageArray:
+        $ref: "#/definitions/Object"
+  userInfo:
+    type: object
+    properties:
+      apiKey:
+        type: "string"
+      username:
+        type: "string"
+      password:
+        type: "string"
+      CurrentHubName:
+        type: "string"
+      upmCookie:
+        type: "string"
+  UserLearnDataSaveRequest:
+    type: object
+    properties:
+      UserLearnId:
+        $ref: "#/definitions/Guid"
+      CurrentPageNumber:
+        type: "number"
+        format: int32
+      PagesVisited:
+        type: "number"
+        format: int32
+      UserLearnProductId:
+        $ref: "#/definitions/Guid"
+      TotalPages:
+        type: "number"
+        format: int32
+  UserNoteSaveRequest:
+    type: object
+    properties:
+      id:
+        $ref: "#/definitions/Guid"
+      header:
+        type: "string"
+      bodytext:
+        type: "string"
+      producttype:
+        type: "string"
+      userproductid:
+        $ref: "#/definitions/Guid"
+      pageid:
+        $ref: "#/definitions/Guid"
+      isdeleted:
+        type: boolean
+      createdby:
+        $ref: "#/definitions/Guid"
+      contentid:
+        $ref: "#/definitions/Guid"
+      images:
+        $ref: "#/definitions/List1"
+      deletedImages:
+        $ref: "#/definitions/List1"
+  UserPageHit:
+    type: object
+    properties:
+      UserId:
+        $ref: "#/definitions/Guid"
+      UserProductId:
+        $ref: "#/definitions/Guid"
+      InstitutionId:
+        type: "number"
+        format: int32
+      HubName:
+        type: "string"
+      PageTitle:
+        type: "string"
+  UserPlaylistProductsRequest:
+    type: object
+    properties:
+      userID:
+        type: "string"
+      testPageSize:
+        type: "string"
+      tutorialPageSize:
+        type: "string"
+      flashCardPageSize:
+        type: "string"
+      flashCardPageNumber:
+        type: "string"
+      learnPageSize:
+        type: "string"
+      currentHubName:
+        type: "string"
+  UserProduct:
+    type: object
+    properties:
+      ProductType:
+        type: "string"
+      orderItemId:
+        $ref: "#/definitions/Guid"
+      userProductId:
+        $ref: "#/definitions/Guid"
+      userProductItemId:
+        $ref: "#/definitions/Guid"
+      productItemId:
+        $ref: "#/definitions/Guid"
+      productId:
+        $ref: "#/definitions/Guid"
+      productCategoryId:
+        $ref: "#/definitions/Guid"
+      UserID:
+        $ref: "#/definitions/Guid"
+      SkuId:
+        $ref: "#/definitions/Guid"
+      ProductTypeId:
+        $ref: "#/definitions/Guid"
+      defaultUrl:
+        type: "string"
+      SEOFriendlyUrl:
+        type: "string"
+      ProductName:
+        type: "string"
+      ShortDescription:
+        type: "string"
+      ProductTypeTitle:
+        type: "string"
+      ProductAttributesTable:
+        $ref: "#/definitions/DataTable"
+      TestProductLaunchModeId:
+        type: "string"
+      ProductTypeCode:
+        $ref: "#/definitions/productType"
+      ProductTypePath:
+        type: "string"
+      Seofriendlyurl:
+        type: "string"
+      Urlfriendlytitle:
+        type: "string"
+      UserTestProductId:
+        $ref: "#/definitions/Guid"
+      SKU:
+        type: "string"
+      LearnID:
+        $ref: "#/definitions/Guid"
+      bundleProductId:
+        $ref: "#/definitions/Guid"
+      DownloadUrl:
+        type: "string"
+      MaxUses:
+        type: "number"
+        format: int32
+      HubName:
+        type: "string"
+      ComputerCourseId:
+        $ref: "#/definitions/Guid"
+      CourseTypes:
+        type: "string"
+      CourseID:
+        $ref: "#/definitions/Guid"
+      FinderLink:
+        type: "string"
+      LinkCode:
+        type: "string"
+      JCAVersion:
+        type: "string"
+      IsStandaloneProduct:
+        type: "string"
+      AssessmentSKUId:
+        type: "string"
+      TestId:
+        $ref: "#/definitions/Guid"
+      GroupTest:
+        type: "number"
+        format: int32
+      ParentProductId:
+        $ref: "#/definitions/Guid"
+      GameUrl:
+        type: "string"
+      GameType:
+        type: "string"
+      GameId:
+        type: "string"
+  UserSchool:
+    type: object
+    properties:
+      UserId:
+        $ref: "#/definitions/Guid"
+      SavedSchoolDate:
+        type: "string"
+        format: date-time
+      SchoolDetails:
+        $ref: "#/definitions/School"
+      UserSavedSchoolId:
+        $ref: "#/definitions/Guid"
+  UserSchoolComparison:
+    type: object
+    properties:
+      UserId:
+        type: "string"
+      FinderToolType:
+        type: "number"
+        format: int32
+      Schools:
+        $ref: "#/definitions/List1"
+      UserComparisonId:
+        $ref: "#/definitions/Guid"
+  UserTest:
+    type: object
+    properties:
+      UserTestId:
+        $ref: "#/definitions/Guid"
+      TestTimeUsed:
+        type: "number"
+        format: int32
+      CurrentSectionId:
+        $ref: "#/definitions/Guid"
+      CurrentPageNumber:
+        type: "number"
+        format: int32
+      Sections:
+        $ref: "#/definitions/List1"
+      TimedStimulus:
+        $ref: "#/definitions/List1"
+      UserTestItems:
+        $ref: "#/definitions/List1"
+      ScoringTypeID:
+        type: "number"
+        format: int32
+      RawScore:
+        $ref: "#/definitions/Single"
+      HighScore:
+        $ref: "#/definitions/Single"
+      ScoreTypeId:
+        type: "number"
+        format: int32
+      IsLtiMode:
+        type: boolean
+      LTIData:
+        type: "string"
+      ScoreResult:
+        $ref: "#/definitions/ScoreResult"
+      IsPoll:
+        type: boolean
+      SurveyTestType:
+        $ref: "#/definitions/SurveyTestTypes"
+      PollType:
+        $ref: "#/definitions/PollTypes"
+      IsEvaluation:
+        type: boolean
+      onBoardingStats:
+        type: "string"
+      TestId:
+        $ref: "#/definitions/Guid"
+  UserTestProduct:
+    type: object
+    properties:
+      id:
+        $ref: "#/definitions/Guid"
+      TestId:
+        type: "string"
+      Title:
+        type: "string"
+      UserId:
+        $ref: "#/definitions/Guid"
+      TestModes:
+        type: "string"
+      MaxUses:
+        type: "number"
+        format: int32
+      TotalUsed:
+        type: "number"
+        format: int32
+      UserTestProductId:
+        $ref: "#/definitions/Guid"
+      UserTestMode:
+        type: "string"
+      CurrentHubName:
+        type: "string"
+      TestTypeId:
+        type: "string"
+  UserTestQuestion:
+    type: object
+    properties:
+      UserTestId:
+        $ref: "#/definitions/Guid"
+      UserTestItems:
+        $ref: "#/definitions/List1"
+
+  Guid:
+    type: object
+
+  Object:
+    type: object
+  ErrorCode:
+    type: object
+  StatusCode:
+    type: object
+  Exception:
+    type: object
+    properties:
+      Message:
+        type: "string"
+      Data:
+        $ref: "#/definitions/IDictionary"
+      InnerException:
+        $ref: "#/definitions/Exception"
+      TargetSite:
+        $ref: "#/definitions/MethodBase"
+      StackTrace:
+        type: "string"
+      HelpLink:
+        type: "string"
+      Source:
+        type: "string"
+      IPForWatsonBuckets:
+        $ref: "#/definitions/UIntPtr"
+      WatsonBuckets:
+        $ref: "#/definitions/Object"
+      RemoteStackTrace:
+        type: "string"
+      HResult:
+        type: "number"
+        format: int32
+      IsTransient:
+        type: boolean
+  Keywords:
+    type: object
+    properties:
+      Essential:
+        type: "string"
+      ExactPhrase:
+        type: "string"
+      AtleastOneWord:
+        type: "string"
+      IgnoreWords:
+        type: "string"
+      JobTitle:
+        type: "string"
+      Company:
+        type: "string"
+      SOCCode:
+        type: "string"
+  Location:
+    type: object
+    properties:
+      intState:
+        type: "number"
+        format: int32
+      City:
+        type: "string"
+      State:
+        type: "string"
+      ZipCode:
+        type: "string"
+
+  Uri:
+    type: object
+    properties:
+      IsImplicitFile:
+        type: boolean
+      IsUncOrDosPath:
+        type: boolean
+      IsDosPath:
+        type: boolean
+      IsUncPath:
+        type: boolean
+      HostType:
+        $ref: "#/definitions/Flags"
+      Syntax:
+        $ref: "#/definitions/UriParser"
+      IsNotAbsoluteUri:
+        type: boolean
+      AllowIdn:
+        type: boolean
+      UserDrivenParsing:
+        type: boolean
+      SecuredPathIndex:
+        $ref: "#/definitions/UInt16"
+      AbsolutePath:
+        type: "string"
+      PrivateAbsolutePath:
+        type: "string"
+      AbsoluteUri:
+        type: "string"
+      LocalPath:
+        type: "string"
+      Authority:
+        type: "string"
+      HostNameType:
+        $ref: "#/definitions/UriHostNameType"
+      IsDefaultPort:
+        type: boolean
+      IsFile:
+        type: boolean
+      IsLoopback:
+        type: boolean
+      PathAndQuery:
+        type: "string"
+      Segments:
+        type: "string"
+      IsUnc:
+        type: boolean
+      Host:
+        type: "string"
+      InitializeLock:
+        $ref: "#/definitions/Object"
+      Port:
+        type: "number"
+        format: int32
+      Query:
+        type: "string"
+      Fragment:
+        type: "string"
+      Scheme:
+        type: "string"
+      OriginalStringSwitched:
+        type: boolean
+      OriginalString:
+        type: "string"
+      DnsSafeHost:
+        type: "string"
+      IdnHost:
+        type: "string"
+      IsAbsoluteUri:
+        type: boolean
+      UserEscaped:
+        type: boolean
+      UserInfo:
+        type: "string"
+      HasAuthority:
+        type: boolean
+
+  usajobsFilters:
+    type: object
+
+  TestDetail:
+    type: object
+    properties:
+      OnBoardingStats:
+        type: "string"
+      TestItemDetails:
+        $ref: "#/definitions/List1"
+
+  DataTable:
+    type: object
+    properties:
+      CaseSensitive:
+        type: boolean
+      AreIndexEventsSuspended:
+        type: boolean
+      IsInitialized:
+        type: boolean
+      IsTypedDataTable:
+        type: boolean
+      SelfNested:
+        type: boolean
+      LiveIndexes:
+        $ref: "#/definitions/List1"
+      RemotingFormat:
+        $ref: "#/definitions/SerializationFormat"
+      UKColumnPositionForInference:
+        type: "number"
+        format: int32
+      ChildRelations:
+        $ref: "#/definitions/DataRelationCollection"
+      Columns:
+        $ref: "#/definitions/DataColumnCollection"
+      CompareInfo:
+        $ref: "#/definitions/CompareInfo"
+      Constraints:
+        $ref: "#/definitions/ConstraintCollection"
+      DataSet:
+        $ref: "#/definitions/DataSet"
+      DefaultView:
+        $ref: "#/definitions/DataView"
+      DisplayExpression:
+        type: "string"
+      DisplayExpressionInternal:
+        type: "string"
+      EnforceConstraints:
+        type: boolean
+      SuspendEnforceConstraints:
+        type: boolean
+      ExtendedProperties:
+        $ref: "#/definitions/PropertyCollection"
+      FormatProvider:
+        $ref: "#/definitions/IFormatProvider"
+      HasErrors:
+        type: boolean
+      Locale:
+        $ref: "#/definitions/CultureInfo"
+      MinimumCapacity:
+        type: "number"
+        format: int32
+      RecordCapacity:
+        type: "number"
+        format: int32
+      ElementColumnCount:
+        type: "number"
+        format: int32
+      ParentRelations:
+        $ref: "#/definitions/DataRelationCollection"
+      MergingData:
+        type: boolean
+      NestedParentRelations:
+        type: array
+        items:
+          $ref: "#/definitions/DataRelation"
+      SchemaLoading:
+        type: boolean
+      NestedParentsCount:
+        type: "number"
+        format: int32
+      PrimaryKey:
+        type: array
+        items:
+          $ref: "#/definitions/DataColumn"
+      Rows:
+        $ref: "#/definitions/DataRowCollection"
+      TableName:
+        type: "string"
+      EncodedTableName:
+        type: "string"
+      Namespace:
+        type: "string"
+      Prefix:
+        type: "string"
+      XmlText:
+        $ref: "#/definitions/DataColumn"
+      MaxOccurs:
+        type: "number"
+        format: decimal(9,2)
+      MinOccurs:
+        type: "number"
+        format: decimal(9,2)
+      Site:
+        $ref: "#/definitions/ISite"
+      System.ComponentModel.IListSource.ContainsListCollection:
+        type: boolean
+      NeedColumnChangeEvents:
+        type: boolean
+      TypeName:
+        $ref: "#/definitions/XmlQualifiedName"
+      RowDiffId:
+        $ref: "#/definitions/Hashtable"
+      ObjectID:
+        type: "number"
+        format: int32
+  productType:
+    type: object
+
+  Single:
+    type: object
+
+  SurveyTestTypes:
+    type: object
+  PollTypes:
+    type: object
+
+  T:
+    type: object
+  XmlQualifiedName:
+    type: object
+
+  DataRowCollection:
+    type: object
+
+  DataColumn:
+    type: object
+
+  Hashtable:
+    type: object
+
+  ScoreResult:
+    type: object
+  Letter:
+    type: object
+  Resume:
+    type: object
+  PersonalProfile:
+    type: object
+  Experience:
+    type: object
+  School:
+    type: object
+  IDictionary:
+    type: object
+  MethodBase:
+    type: object
+  UIntPtr:
+    type: object
+  Flags:
+    type: object
+  UriParser:
+    type: object
+  UInt16:
+    type: object
+  UriHostNameType:
+    type: object
+  SerializationFormat:
+    type: object
+  DataRelationCollection:
+    type: object
+  DataColumnCollection:
+    type: object
+  CompareInfo:
+    type: object
+  ConstraintCollection:
+    type: object
+  DataSet:
+    type: object
+  DataView:
+    type: object
+  PropertyCollection:
+    type: object
+  IFormatProvider:
+    type: object
+  CultureInfo:
+    type: object
+  DataRelation:
+    type: object
+  ISite:
+    type: object
+  Education:
+    type: object
+  NewSection:
+    type: object
